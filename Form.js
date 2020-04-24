@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Formik, Field, yupToFormErrors } from 'formik';
+import React from 'react';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import FormikDatePicker from '../FormikDatePicker/FormikDatePicker';
 
 const Form = () => {
-
     return (
         <>
         <Formik
@@ -21,10 +20,10 @@ const Form = () => {
             }, 400);
         }}
         >
-
         {(formik) => (
             <form onSubmit={formik.handleSubmit} >
             <FormikDatePicker
+            placeHolderText={'mm/dd/yyyy'}
             value={formik.values.date}
             onChange={formik.setFieldValue}
             onBlur={formik.setFieldTouched}
@@ -32,10 +31,8 @@ const Form = () => {
             label={'Date Picker'}
             name={'date'}          
             />
-            <br /> 
             <button type="submit" className={'buttonPrimary'}>Submit</button>
             </form>
-
         )}         
         </Formik>
         </>
