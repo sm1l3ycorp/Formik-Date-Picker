@@ -1,0 +1,9 @@
+.datePicker {
+    display: flex;
+    flex-direction: row;
+}
+
+.calendarIcon {
+    margin-left: 5px;
+    margin-top: 10px;
+}
